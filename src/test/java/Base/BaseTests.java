@@ -1,5 +1,6 @@
 package Base;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,7 +13,12 @@ public class BaseTests {
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
         System.out.println(driver.getTitle());
-        driver.close();
+
+        driver.manage().window().maximize();
+        //driver.manage().window().fullscreen();
+        //driver.manage().window().setSize(new Dimension(375, 812));
+
+        driver.quit();
     }
 
     public static void main(String args[]){
